@@ -1,0 +1,27 @@
+{
+  "name": "programming-test-2",
+  "version": "0.0.0",
+  "description": "Programming test 2",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:release": "tsc -p tsconfig.release.json",
+    "clean": "rimraf ./built",
+    "clean:release": "rimraf ./lib",
+    "start": "node ./built/index.js",
+    "start:release": "node ./lib/index.js",
+    "test": "jest",
+    "prepublishOnly": "npm run clean:release && npm run build:release"
+  },
+  "author": "Ted Stoychev",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.14",
+    "jest": "^26.0.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.1.0",
+    "typescript": "^3.9.5"
+  }
+}
